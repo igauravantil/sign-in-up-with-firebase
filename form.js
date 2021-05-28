@@ -13,17 +13,20 @@
   const auth = firebase.auth();
   
 
-
+  
 
   function signup() {
     var email = document.getElementById("email");
     var password = document.getElementById("password");
     const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-    promise.catch(e => alert(e.message));
+    
     
 
     alert("Signed up");
-    window.location = 'form.html';
+    
+  }
+  function redirect(){
+    window.location = "form.html";
   }
 
   function signin() {
@@ -38,16 +41,19 @@
   function signout(){
       auth.signOut();
       alert("Signed out");
+      location.replace("form.html");
   }
 
+
+  
   auth.onAuthStateChanged(function(user){
-      if(user){
-        window.location = "login.html";
+    
+      if(user!=null){
+        document.getElementById("displayEmail").innerHTML = user.email;
+        
+        location.replace("login.html");
+
 
       }
-      else{
-          window.location = "form.html";
-
-
-      }
+      
   })
