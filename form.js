@@ -11,9 +11,7 @@
   firebase.initializeApp(firebaseConfig);
 
   const auth = firebase.auth();
-  function redirect() {
-      
-  }
+  
 
 
 
@@ -44,11 +42,12 @@
 
   auth.onAuthStateChanged(function(user){
       if(user){
-        var email = user.email;
-        alert("active user" + email.value);
+        window.location = "login.html";
+
       }
       else{
-          alert("no active user");
+          window.location = "form.html";
+
 
       }
   })
