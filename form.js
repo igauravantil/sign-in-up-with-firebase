@@ -34,8 +34,11 @@
     var password = document.getElementById("password");
     const promise = auth.signInWithEmailAndPassword(email.value, password.value);
     promise.catch(e=>alert(e.message));
+    
+    document.getElementById("displayEmail").innerHTML = email.value + " has logged in click on sign out to log out";
+    //location.replace("login.html");
 
-    //alert("Signed in"+email.value);
+    alert("Signed in "+email.value);
   }
 
   function signout(){
@@ -47,13 +50,12 @@
 
   
   auth.onAuthStateChanged(function(user){
-    
-      if(user!=null){
-        document.getElementById("displayEmail").innerHTML = user.email;
-        
-        location.replace("login.html");
-
-
-      }
+    if(user!=null){
+      alert("Active user " + email.value)
+    }
+    else{
+      alert("No active user");
+    }
+      
       
   })

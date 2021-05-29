@@ -1,6 +1,7 @@
-<html>
+<!DOCTYPE html>
 <head>
     <title>Sign Up Page</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
 
@@ -13,7 +14,7 @@
     <input type="text" placeholder="Date" id="date" onfocus="(this.type='date')"/>
     <input type="text" placeholder="Place of Birth" id="placeOfBirth" />
     <button onclick="signup()" id="signup"> Submit </button>
-    <button onclick="redirect()" id="redirect" > Go to homepage</button>
+    <button onclick="signout()" id="signout" >Sign out and Go to homepage</button>
 
 
 
