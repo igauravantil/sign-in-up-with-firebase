@@ -26,7 +26,7 @@
     
   }
   function redirect(){
-    window.location = "form.html";
+    window.location = "index.html";
   }
 
   function signin() {
@@ -44,7 +44,7 @@
   function signout(){
       auth.signOut();
       alert("Signed out");
-      location.replace("form.html");
+      location.replace("index.html");
   }
 
 
